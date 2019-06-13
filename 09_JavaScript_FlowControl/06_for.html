@@ -15,7 +15,7 @@
     </pre>
 
     <!-- 設置三標籤 <pre> id 為 pTimes，另外兩個為<p> id分別為pSquare、pTriangle -->
-
+        <p id="pSquare"></p>
     <script type="text/javascript">
         // 1. 使用for迴圈，列印出這個月份從1號到目前系統日
 
@@ -34,12 +34,42 @@
         // **** 
         // **** 
         // ****
+        var stars = "";
+        for (var j = 1; j <= 6; j++) {
+            for (var i = 1; i <= 4; i++) {
+                stars = stars + "*";
+            }
+            stars = stars + "<br>";
+        }
 
+        document.getElementById("pSquare").innerHTML = stars;
         // 8. 雙層迴圈 - 三角形
         // * 
         // ** 
         // *** 
         // **** 
+        // *******
+        //  *****
+        //   ***
+        //    *
+        var stars = "";
+        var n = (4*2) -1;
+        for (var j = 1; j <= 4; j++) {
+            for(var i = j; i>1; i--) {
+                stars = stars + "&nbsp;";
+            }
+            for (var i = n; i > 0; i--) {
+                stars = stars + "*";
+            }
+            stars = stars + "<br>";
+
+            n -=2;
+        }
+
+        document.getElementById("pSquare").innerHTML = stars;
+
+
+
     </script>
 </body>
 
