@@ -23,10 +23,15 @@
 
 
         // 試試看，驗證密碼是否有包含至少一位大寫英文，在不知道 Regular Expressions 正規表示式以前，我們可以怎麼寫? 
-
+        var passWord = "1234567A";
+        var flag = true;
+        for(var i = 0; i< passWord.length; i++) {
+            var temp = passWord.substring(i, i+1);
+            console.log(temp);
+        }
 
         // 被「//」夾住的文字，是 正規表示法 的描述
-        let patt = /rday/;
+        let patt = /day/;
         let str = 'Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday';
         console.log(`test 會回傳 true/false值：${patt.test(str)}`);
         
@@ -46,11 +51,16 @@
           
 
         // 1. 驗證密碼是否有包含至少一位大寫英文
-
+        patt = /[A-Z]/;
+        var passWord = "1234567A";
+        console.log(`test 會回傳 true/flase : ${ patt.test(passWord)}`);
         // 2. 驗證輸入的文字是否有包含空白
-
+        patt = /\s/;
+        var name = "資策 會";
+        console.log(`${name} 是否有空白 : ${patt.test(name) }`);
         // 3. 驗證身份證字號格式，第一碼是英文，後面是數字；例如：A123456789
-
+        patt = /^[A-Za-z]\d{9}$/;
+        let id = "A123456789";
         // 4. 驗證車牌號碼，假設以 - 分隔，-前會有2-3碼英文，-後會有3-4碼數字
 
     </script>

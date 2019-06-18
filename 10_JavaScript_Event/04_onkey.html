@@ -9,6 +9,29 @@
 <body>
     <!-- 輸出畫面請參考圖片 -->
     <!-- 會需要的關鍵字：onkeypress 事件、onkeydown事件、event.keyCode、event.charCode -->
+    
+    <h3>測試綁定<i>onkey</i>事件</h3>
+    <input type="text" onkeypress="testKeyPress(event)">
+    <p>這裡顯示keycode : <span id="keyPress1"></span></p>
+    <p>這裡顯示charcode : <span id="keyPress2"></span></p>
 
+    <h3>測試綁定<i>onkeydown</i></h3>
+    <input type="text" onkeydown="testKeyDown(event)">
+    <p>這裡顯示keycode : <span id="keydown1"></span></p>
+    <p>這裡顯示charcode : <span id="keydown2"></span></p>
+
+    <script>
+        // 測試keypress 事件
+        function testKeyPress(obj) {
+            document.getElementById("keyPress1").innerHTML = obj.keyCode;
+            document.getElementById("keyPress2").innerHTML = obj.charCode;
+        }
+
+        // 測試keydown 事件
+        function testKeyDown(obj) {
+            document.getElementById("keydown1").innerHTML = obj.keyCode;
+            document.getElementById("keydown2").innerHTML = obj.charCode;
+        }
+    </script>
 </body>
 </html>
